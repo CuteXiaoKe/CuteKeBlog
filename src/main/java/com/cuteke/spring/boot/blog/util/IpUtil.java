@@ -24,6 +24,8 @@ public class IpUtil {
     public static String getAddressByIP(String strIP) {
         if(strIP.equals("127.0.0.1")||strIP.equals("0:0:0:0:0:0:0:1"))
             return "本地局域网";
+        if(isInnerIP(strIP))
+            return "本地局域网";
         try {
             URL url = new URL("http://api.map.baidu.com/location/ip?ak=F454f8a5efe5e577997931cc01de3974&ip="+strIP);
             URLConnection conn = url.openConnection();
