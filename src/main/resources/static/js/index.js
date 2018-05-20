@@ -53,6 +53,11 @@ $(function() {
 	// 最新\最热切换事件
 	$(".nav-item .nav-link").click(function() {
  
+		var id=$(this).attr("id");
+		
+		if(id=="pdf")
+			return ;
+		
 		var url = $(this).attr("url");
 		
 		// 先移除其他的点击样式，再添加当前的点击样式

@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<link href="../../css/markdown.css" th:href="@{/css/markdown.css}" rel="stylesheet">
+<head>
+<link href="../../css/markdown.css" th:href="@{/css/markdown.css}" rel="stylesheet"/>
 <title th:text="${blogModel.title}+' - CuteKe小站'">CuteKe小站</title>
-<meta name="keywords" th:content="${blogModel.tags}">
-<meta name="description" th:content="${blogModel.summary}">
-<meta charset="utf-8">
+<meta name="keywords" th:content="${blogModel.tags}"/>
+<meta name="description" th:content="${blogModel.summary}"/>
+<meta charset="utf-8"/>
 <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 <!-- CSRF -->
 <meta name="_csrf" th:content="${_csrf.token}"/>
 <!-- default header name is X-CSRF-TOKEN -->
 <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
 
 <!-- Tether core CSS -->
-<link href="../../css/tether.min.css" th:href="@{/css/tether.min.css}" rel="stylesheet">
+<link href="../../css/tether.min.css" th:href="@{/css/tether.min.css}" rel="stylesheet"/>
 
 <!-- Bootstrap CSS -->
-<link href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
 
 <!-- Font-Awesome CSS -->
-<link href="../../css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet">
+<link href="../../css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
 
 <!-- NProgress CSS -->
-<link href="../../css/nprogress.css" th:href="@{/css/nprogress.css}" rel="stylesheet">
+<link href="../../css/nprogress.css" th:href="@{/css/nprogress.css}" rel="stylesheet"/>
 
 <!-- thinker-md CSS -->
-<link href="../../css/thinker-md.vendor.css" th:href="@{/css/thinker-md.vendor.css}" rel="stylesheet">
+<link href="../../css/thinker-md.vendor.css" th:href="@{/css/thinker-md.vendor.css}" rel="stylesheet"/>
 
 <!-- bootstrap tags CSS -->
-<link href="../../css/bootstrap-tagsinput.css" th:href="@{/css/jquery.tagsinput.min.css}" rel="stylesheet">
+<link href="../../css/bootstrap-tagsinput.css" th:href="@{/css/jquery.tagsinput.min.css}" rel="stylesheet"/>
 
 <!-- bootstrap chosen CSS -->
-<link href="../../css/component-chosen.min.css" th:href="@{/css/component-chosen.min.css}" rel="stylesheet">
+<link href="../../css/component-chosen.min.css" th:href="@{/css/component-chosen.min.css}" rel="stylesheet"/>
 
 <!-- toastr CSS -->
-<link href="../../css/toastr.min.css" th:href="@{/css/toastr.min.css}" rel="stylesheet">
+<link href="../../css/toastr.min.css" th:href="@{/css/toastr.min.css}" rel="stylesheet"/>
 
 <!-- jQuery image cropping plugin CSS -->
-<link href="../../css/cropbox.css" th:href="@{/css/cropbox.css}" rel="stylesheet">
+<link href="../../css/cropbox.css" th:href="@{/css/cropbox.css}" rel="stylesheet"/>
 
 <!-- Custom styles -->
-<link href="../../css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+<link href="../../css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
 <link href="../../css/thymeleaf-bootstrap-paginator.css" th:href="@{/css/thymeleaf-bootstrap-paginator.css}"
       rel="stylesheet">
-<link href="../../css/blog.css" th:href="@{/css/blog.css}" rel="stylesheet">
+<link href="../../css/blog.css" th:href="@{/css/blog.css}" rel="stylesheet"/>
 </head>
 <body>
 <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-sm navbar-toggleable-md">
@@ -74,6 +75,15 @@
                         <a href="javascript:void(0)" class="btn btn-outline-secondary my-2 my-sm-0" id="indexsearch">
                             <i class="fa fa-search" aria-hidden="true"></i></a>
                     </form>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link"  href="javascript:void(0)" data-toggle="dropdown" id="pdf" aria-haspopup="true" aria-expanded="false"><span style="color: red">PDF实验室</span></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/u/waylau" th:href="@{'/pdf/resume'}">简历生成器</a>
+                        <!--<a class="dropdown-item disable" href="/u/waylau" th:href="@{'/pdf/resume'}">URL转PDF</a>-->
+                        <!--<a class="dropdown-item disable" href="/u/waylau" th:href="@{'/pdf/resume'}">PDF拼接</a>-->
+                        <!--<a class="dropdown-item disable" href="/u/waylau" th:href="@{'/pdf/resume'}">PDF水印</a>-->
+                    </div>
                 </li>
             </ul>
             <div sec:authorize="isAuthenticated()" class="row">
