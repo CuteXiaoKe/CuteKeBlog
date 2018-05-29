@@ -54,6 +54,9 @@ $(function() {
 	$(".nav-item .nav-link").click(function() {
  
 		var url = $(this).attr("url");
+		var id=$(this).attr("id");
+		if(id=="pdf")
+			return ;
 		
 		// 先移除其他的点击样式，再添加当前的点击样式
 		$(".nav-item .nav-link").removeClass("active");
