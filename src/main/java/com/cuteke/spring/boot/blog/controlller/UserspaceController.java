@@ -405,7 +405,7 @@ public class UserspaceController {
 		if (org.apache.commons.lang.time.DateUtils.isSameDay(date,currentDate)){
 			if(ipMapsCounts.containsKey(blogIPVO)){
 				Integer oldValue=ipMapsCounts.get(blogIPVO);
-				if(oldValue<=readingMax) {
+				if(oldValue<readingMax) {
 					Integer newValue=oldValue+1;
 					ipMapsCounts.replace(blogIPVO,oldValue,newValue);
 					return true;
